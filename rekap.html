@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Rekap Semester - SiNilai</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <style>
+      .navbar-nav .nav-link.active {
+        color: #4F46E5 !important;
+        font-weight: 600;
+      }
+      /* Style tambahan untuk header tabel berwarna ungu sesuai gambar */
+      .bg-purple-table {
+        background-color: #5850EC !important;
+        color: white !important;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-4">
+      <div class="container">
+        <a class="navbar-brand" href="index.html" style="color: #4F46E5; font-weight: 700;">📝 SiNilai</a>
+        <div class="navbar-nav ms-auto"> <a class="nav-link" href="index.html">Dashboard</a>
+          <a class="nav-link" href="input-nilai.html">Input Nilai</a>
+          <a class="nav-link active" href="rekap.html">Rekap Semester</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h4 class="mb-2" style="color: #4F46E5; font-weight: 700;">Rekap Nilai per Semester</h4>
+      <p class="text-muted mb-4">Nilai dikelompokkan otomatis berdasarkan semester.</p>
+
+      <div class="alert alert-success alert-dismissible fade show border-0 shadow-sm mb-4" role="alert" id="pesanIpk">
+        <strong>Selamat!</strong> IPK Anda <span class="fw-bold">3.06</span> — sudah di atas 2.50. Pertahankan prestasimu!
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+
+      <div id="containerRekap"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

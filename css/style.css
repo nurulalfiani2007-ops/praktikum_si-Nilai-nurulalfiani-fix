@@ -1,0 +1,209 @@
+:root {
+  --primary: #4f46e5;
+  --primary-dark: #4338ca;
+  --success: #10b981;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+  --bg: #f8fafc;
+}
+
+body {
+  background: var(--bg);
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: var(--primary) !important;
+}
+
+.stat-card {
+  border: none;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s;
+}
+.stat-card:hover {
+  transform: translateY(-3px);
+}
+.stat-card .stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+.stat-card .stat-label {
+  font-size: 0.85rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* =========================================================
+   ⚠️ PERBAIKAN UTAMA: FORCE HEADER TABEL MENJADI UNGU PREMIUM
+   ========================================================= */
+.table {
+  background-color: white !important;
+}
+
+/* Memaksa elemen thead dan th di semua halaman menggunakan background ungu */
+.table thead,
+.table thead tr,
+.table thead th,
+#tabelNilai thead th,
+#tabelDashboard thead th {
+  background-color: var(--primary) !important;
+  color: white !important;
+  border: none !important;
+  font-weight: 600 !important;
+  padding: 12px 16px !important;
+}
+
+/* ⚠️ TAMBAHAN: Membuat kontainer tabel memiliki sudut melengkung & bayangan */
+.table-responsive {
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05) !important;
+  background: white !important;
+}
+
+/* Merapikan baris dalam tabel */
+.table tbody td {
+  padding: 14px 16px !important;
+  vertical-align: middle !important;
+  border-bottom: 1px solid #f1f5f9 !important;
+}
+
+/* ========================================================= */
+
+.badge {
+  font-weight: 500;
+  padding: 0.4em 0.7em;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #94a3b8;
+}
+.empty-state .icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+#inputCariMk {
+  border-radius: 10px;
+  border: 2px solid #e2e8f0;
+  padding: 0.6rem 1rem;
+}
+#inputCariMk:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+/* ⚠️ PENYEGARAN: Membuat Semester Card lebih timbul dan modern */
+.semester-group {
+  background: white;
+  border-radius: 16px !important; /* Diubah dari 12px menjadi 16px agar lebih melengkung */
+  padding: 1.5rem !important;
+  margin-bottom: 2rem !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05) !important; /* Efek bayangan */
+  border: 1px solid #e2e8f0 !important;
+}
+.semester-group h5 {
+  color: var(--primary);
+  font-weight: 700;
+  border-bottom: 2px solid #f1f5f9;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.alert {
+  border-radius: 12px;
+}
+
+/* Badge Grade dengan Warna Berbeda */
+.badge-grade {
+  font-weight: 600;
+  padding: 0.4em 0.8em;
+  min-width: 45px;
+  text-align: center;
+}
+
+.grade-A {
+  background-color: #10b981 !important;
+  color: white !important;
+}
+.grade-B {
+  background-color: #3b82f6 !important;
+  color: white !important;
+}
+.grade-C {
+  background-color: #06b6d4 !important;
+  color: white !important;
+}
+.grade-D {
+  background-color: #f59e0b !important;
+  color: white !important;
+}
+.grade-E {
+  background-color: #ef4444 !important;
+  color: white !important;
+}
+
+/* Penanganan grade kosong/tidak valid */
+.grade-empty {
+  background-color: #e5e7eb;
+  color: #374151;
+}
+
+/* Tombol Hapus */
+.btn-hapus {
+  background: none;
+  border: 2px solid #fecaca;
+  color: #ef4444;
+  border-radius: 8px;
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-hapus:hover {
+  background: #ef4444;
+  color: white;
+  border-color: #ef4444;
+  transform: scale(1.1);
+}
+
+/* Info Badge di Header (Kanan Atas: 6 MK | IPK: 1.95) */
+.info-badge {
+  background: var(--primary) !important;
+  color: white !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 50rem !important; /* Membuat ujung bulat sempurna lonjong */
+  font-size: 0.85rem;
+  font-weight: 700 !important;
+}
+
+/* ⚠️ TAMBAHAN: Memaksa tombol utama (seperti Simpan Nilai) agar berwarna ungu penuh */
+.btn-primary,
+button[type="submit"] {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  font-weight: 600 !important;
+  padding: 10px 20px !important;
+  border-radius: 8px !important;
+  transition: background-color 0.2s;
+}
+.btn-primary:hover,
+button[type="submit"]:hover {
+  background-color: var(--primary-dark) !important;
+  border-color: var(--primary-dark) !important;
+}
+
+/* ⚠️ TAMBAHAN: Desain Box Input Form di sebelah kiri agar serasi */
+form, .card {
+  background: white;
+  border-radius: 16px !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05) !important;
+}

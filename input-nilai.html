@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Input Nilai - SiNilai</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" /> 
+    <style>
+      /* Warna ungu utama sesuai tema aplikasi Anda */
+      .bg-purple-header {
+        background-color: #4F46E5 !important;
+        color: white !important;
+      }
+      .btn-purple {
+        background-color: #4F46E5 !important;
+        border-color: #4F46E5 !important;
+        color: white !important;
+      }
+      .btn-purple:hover {
+        background-color: #4338CA !important;
+      }
+      .text-purple {
+        color: #4F46E5 !important;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-4">
+      <div class="container">
+        <a class="navbar-brand fw-bold text-purple" href="index.html">SiNilai</a>
+        <div class="navbar-nav ms-auto">
+          <a class="nav-link" href="index.html">Dashboard</a>
+          <a class="nav-link active fw-bold text-purple" href="input-nilai.html">Input Nilai</a>
+          <a class="nav-link" href="rekap.html">Rekap Semester</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row g-4">
+        
+        <div class="col-md-4">
+          <div class="card shadow-sm border-0 p-3">
+            <div class="card-body">
+              <h5 class="fw-bold mb-4">Tambah Nilai Mata Kuliah</h5>
+              <form id="formNilai">
+                <div class="mb-3">
+                  <label class="form-label text-secondary fw-semibold">Nama Mata Kuliah *</label>
+                  <input type="text" id="nama" class="form-control" required />
+                </div>
+                <div class="mb-3">
+                  <label class="form-label text-secondary fw-semibold">SKS *</label>
+                  <select id="sks" class="form-select" required>
+                    <option value="">-- Pilih SKS --</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label text-secondary fw-semibold">Nilai Angka (0–100) *</label>
+                  <input type="number" id="nilai" class="form-control" min="0" max="100" required />
+                </div>
+                <div class="mb-4">
+                  <label class="form-label text-secondary fw-semibold">Semester *</label>
+                  <select id="semester" class="form-select" required>
+                    <option value="">-- Pilih Semester --</option>
+                    <option value="Semester 1">Semester 1</option>
+                    <option value="Semester 2">Semester 2</option>
+                    <option value="Semester 3">Semester 3</option>
+                    <option value="Semester 4">Semester 4</option>
+                  </select>
+                </div>
+                <div class="d-grid gap-2">
+                  <button type="submit" class="btn btn-purple fw-semibold py-2">💾 Simpan Nilai</button>
+                  <button type="reset" class="btn btn-link text-secondary text-decoration-none">Reset Form</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-8">
+          <div class="card shadow-sm border-0 p-3">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5 class="fw-bold m-0">📊 Data Nilai Tersimpan</h5>
+                <span class="text-secondary fw-semibold" id="infoCount">8 MK | IPK: 2.70</span>
+              </div>
+
+              <input
+                type="text"
+                id="inputCariMk"
+                class="form-control mb-3"
+                placeholder="🔍 Cari nama mata kuliah di sini..."
+              />
+
+              <div class="table-responsive">
+                <table class="table table-hover align-middle" id="tabelNilai">
+                  <thead>
+                    <tr class="bg-purple-header">
+                      <th class="ps-3">No</th>
+                      <th>Mata Kuliah</th>
+                      <th>SKS</th>
+                      <th>Nilai</th>
+                      <th>Grade</th>
+                      <th>Status</th>
+                      <th>Sem</th>
+                      <th class="pe-3">Aksi</th>
+                    </tr>
+                  </thead>
+                  <tbody id="bodyTabelNilai">
+                    <tr>
+                      <td class="ps-3">1</td>
+                      <td class="fw-bold">pw</td>
+                      <td>3</td>
+                      <td>90</td>
+                      <td><span class="badge bg-success">A</span></td>
+                      <td><span class="badge bg-success rounded-pill">✓ Lulus</span></td>
+                      <td class="text-secondary">Semester 2</td>
+                      <td class="pe-3"><button class="btn btn-light btn-sm text-secondary border">🗑️</button></td>
+                    </tr>
+                    <tr>
+                      <td class="ps-3">2</td>
+                      <td class="fw-bold">struktur data</td>
+                      <td>2</td>
+                      <td>75</td>
+                      <td><span class="badge bg-primary">B</span></td>
+                      <td><span class="badge bg-success rounded-pill">✓ Lulus</span></td>
+                      <td class="text-secondary">Semester 2</td>
+                      <td class="pe-3"><button class="btn btn-light btn-sm text-secondary border">🗑️</button></td>
+                    </tr>
+                    <tr>
+                      <td class="ps-3">3</td>
+                      <td class="fw-bold">psikologi pendidikan</td>
+                      <td>2</td>
+                      <td>40</td>
+                      <td><span class="badge bg-danger">E</span></td>
+                      <td><span class="badge bg-danger rounded-pill">✗ Tidak Lulus</span></td>
+                      <td class="text-secondary">Semester 2</td>
+                      <td class="pe-3"><button class="btn btn-light btn-sm text-secondary border">🗑️</button></td>
+                    </tr>
+                    <tr>
+                      <td class="ps-3">4</td>
+                      <td class="fw-bold">filsafat pendidikan</td>
+                      <td>2</td>
+                      <td>60</td>
+                      <td><span class="badge bg-warning text-dark">D</span></td>
+                      <td><span class="badge bg-success rounded-pill">✓ Lulus</span></td>
+                      <td class="text-secondary">Semester 2</td>
+                      <td class="pe-3"><button class="btn btn-light btn-sm text-secondary border">🗑️</button></td>
+                    </tr>
+                    <tr>
+                      <td class="ps-3">5</td>
+                      <td class="fw-bold">jaringan komputer</td>
+                      <td>4</td>
+                      <td>70</td>
+                      <td><span class="badge bg-info">C</span></td>
+                      <td><span class="badge bg-success rounded-pill">✓ Lulus</span></td>
+                      <td class="text-secondary">Semester 2</td>
+                      <td class="pe-3"><button class="btn btn-light btn-sm text-secondary border">🗑️</button></td>
+                    </tr>
+                    <tr>
+                      <td class="ps-3">6</td>
+                      <td class="fw-bold">kewarganegaraan</td>
+                      <td>3</td>
+                      <td>100</td>
+                      <td><span class="badge bg-success">A</span></td>
+                      <td><span class="badge bg-success rounded-pill">✓ Lulus</span></td>
+                      <td class="text-secondary">Semester 2</td>
+                      <td class="pe-3"><button class="btn btn-light btn-sm text-secondary border">🗑️</button></td>
+                    </tr>
+                    <tr>
+                      <td class="ps-3">7</td>
+                      <td class="fw-bold">bahasa inggris</td>
+                      <td>2</td>
+                      <td>100</td>
+                      <td><span class="badge bg-success">A</span></td>
+                      <td><span class="badge bg-success rounded-pill">✓ Lulus</span></td>
+                      <td class="text-secondary">Semester 2</td>
+                      <td class="pe-3"><button class="btn btn-light btn-sm text-secondary border">🗑️</button></td>
+                    </tr>
+                    <tr>
+                      <td class="ps-3">8</td>
+                      <td class="fw-bold">studi keacehan</td>
+                      <td>2</td>
+                      <td>80</td>
+                      <td><span class="badge bg-primary">B</span></td>
+                      <td><span class="badge bg-success rounded-pill">✓ Lulus</span></td>
+                      <td class="text-secondary">Semester 2</td>
+                      <td class="pe-3"><button class="btn btn-light btn-sm text-secondary border">🗑️</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <button class="btn btn-outline-danger btn-sm mt-3" onclick="hapusSemuaData()">🗑️ Hapus Semua Data</button>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

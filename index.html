@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dashboard - SiNilai</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-4">
+      <div class="container">
+        <a class="navbar-brand fw-bold text-purple" href="index.html">📝 SiNilai</a>
+        <div class="navbar-nav ms-auto">
+          <a class="nav-link active fw-bold text-purple" href="index.html">Dashboard</a>
+          <a class="nav-link" href="input-nilai.html">Input Nilai</a>
+          <a class="nav-link" href="rekap.html">Rekap Semester</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row g-3 mb-4">
+        <div class="col-md-3">
+          <div class="card shadow-sm border-0 p-3">
+            <div class="stat-label">IPK Kumulatif</div>
+            <div class="stat-value" id="statIpk">-</div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card shadow-sm border-0 p-3">
+            <div class="stat-label">Total MK</div>
+            <div class="stat-value" id="statTotal">0</div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card shadow-sm border-0 p-3">
+            <div class="stat-label">Nilai Tertinggi</div>
+            <div class="stat-value" id="statMax">-</div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card shadow-sm border-0 p-3">
+            <div class="stat-label">Nilai Terendah</div>
+            <div class="stat-value" id="statMin">-</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="pesanIpk" class="mb-4"></div>
+
+      <div class="card shadow-sm border-0 mb-4">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="fw-bold mb-0">📋 Ringkasan Semua Nilai</h5>
+            <a href="input-nilai.html" class="btn btn-purple btn-sm px-3 fw-semibold">+ Tambah Nilai</a>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-hover align-middle" id="tabelDashboard">
+              <thead>
+                <tr class="bg-purple-header">
+                  <th class="ps-3">No</th>
+                  <th>Mata Kuliah</th>
+                  <th>SKS</th>
+                  <th>Nilai</th>
+                  <th>Grade</th>
+                  <th>Status</th>
+                  <th class="pe-3">Semester</th>
+                </tr>
+              </thead>
+              <tbody id="bodyTabelDashboard"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
